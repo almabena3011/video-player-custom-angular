@@ -1,27 +1,70 @@
-# AngularVideoPlayer
+# Web Video Player with Angular and Video.js
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.11.
+## Description
 
-## Development server
+This project demonstrates how to integrate Video.js into an Angular application to create a custom video player.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Features
 
-## Code scaffolding
+- Video player component using Video.js library.
+- Custom buttons for play and restart functionalities.
+- Responsive design.
+- Easily customizable.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Technologies Used
 
-## Build
+- Angular
+- Video.js
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Installation
 
-## Running unit tests
+1. **Clone the repository:**
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+   ```bash
+   git clone https://github.com/mmy-lana/angular-video-player.git
+   ```
 
-## Running end-to-end tests
+2. **Navigate to the project directory:**
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+   ```bash
+   cd angular-video-player
+   ```
 
-## Further help
+3. **Install dependencies:**
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+   ```bash
+   npm install
+   ```
+
+4. **Start the development server:**
+
+   ```bash
+   ng serve
+   ```
+
+5. **Open your browser and navigate to [http://localhost:4200](http://localhost:4200) to see the application running.**
+
+## Deployment
+
+This project can be deployed online using platforms like Vercel, Netlify, or GitHub Pages. Simply follow the deployment instructions provided by the platform of your choice.
+
+## Folder Structure
+
+- `src/app/video-player`: Contains the Video Player component.
+- `src/assets/videos`: Contains the sample video file.
+- `src/styles.scss`: Contains custom styling for the application.
+
+## Customization
+
+You can easily customize the appearance and functionality of the video player by modifying the Video Player component and adjusting the Video.js options.
+
+## Credits
+
+- [Video.js](https://videojs.com): A powerful and customizable HTML5 video player library.
+- [Angular](https://angular.io): A TypeScript-based open-source web application framework.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+Feel free to use this project as a template or starting point for your own Angular video player applications. If you have any questions or suggestions, please feel free to reach out. Happy coding!
