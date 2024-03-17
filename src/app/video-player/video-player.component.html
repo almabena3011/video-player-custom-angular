@@ -1,55 +1,18 @@
-<div class="video-container p-grid p-justify-center">
+<div class="container-player">
   <video
-    id="my-video"
+    id="video-source"
     class="video-js vjs-default-skin p-col-12"
     controls
     preload="auto"
-    width="800"
-    height="450"
+    width="1000"
+    height="600"
   >
-    <source src="https://vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
+    <source src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4" type="video/mp4" />
   </video>
-  <div class="video-controls p-grid p-justify-center">
-    <p-button
-      label="Play"
-      icon="pi pi-play"
-      class="m-3 p-col-3"
-      [outlined]="true"
-      severity="secondary"
-      (click)="play()"
-    ></p-button>
-    <p-button
-      label="Pause"
-      icon="pi pi-pause"
-      class="m-3 p-col-3"
-      [outlined]="true"
-      severity="secondary"
-      (click)="pause()"
-    ></p-button>
-    <p-button
-      label="Restart"
-      icon="pi pi-replay"
-      class="m-3 p-col-3"
-      [outlined]="true"
-      severity="secondary"
-      (click)="restart()"
-    ></p-button>
-    <p-button
-      label="backward"
-      icon="pi pi-fast-backward"
-      class="m-3 p-col-3"
-      [outlined]="true"
-      severity="secondary"
-      (click)="fastBackward()"
-    ></p-button>
-    <p-button
-      label="forward"
-      icon="pi pi-fast-forward"
-      class="m-3 p-col-3"
-      [outlined]="true"
-      severity="secondary"
-      (click)="fastForward()"
-    ></p-button>
+  <div class="player-control">
+    <button (click)="playVideo()" class="control-button">Play</button>
+    <button (click)="restartVideo()" class="control-button">Restart</button>
+    <button (click)="pauseVideo()" class="control-button">Pause</button>
+    <button (click)="muteVideo()" class="control-button">{{ muteLabel }}</button>
   </div>
 </div>

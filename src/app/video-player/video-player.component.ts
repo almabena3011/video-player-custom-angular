@@ -1,42 +1,52 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 
 import videojs from 'video.js';
 
 @Component({
-  selector: 'app-video-player',
+  selector: 'app-angular-video-player',
   templateUrl: './video-player.component.html',
   styleUrls: ['./video-player.component.css']
 })
-export class VideoPlayerComponent implements OnInit {
-
+export class AngularVideoPlayerComponent implements OnInit, OnDestroy {
   player: any;
-
+  @Input() videoLink: string = '';
+  isMuted: boolean = false;
+  muteLabel: string = "Mute";
   constructor() { }
 
   ngOnInit(): void {
-    this.player = videojs('my-video');
+    this.player = videojs('video-source');
   }
 
-  play(): void {
+  playVideo(): void {
     this.player.play();
   }
 
-  restart(): void {
+  restartVideo(): void {
     this.player.currentTime(0);
-    this.player.play();
+    this.playVideo();
   }
 
-  fastForward(): void {
-    const currentTime = this.player.currentTime();
-    this.player.currentTime(currentTime + 10);
-  }
-  fastBackward(): void {
-    const currentTime = this.player.currentTime();
-    this.player.currentTime(currentTime - 10);
-  }
-
-  pause(): void {
+  pauseVideo(): void {
     this.player.pause();
   }
 
+  muteVideo(): void {
+    if(!this.isMuted){
+      this.isMuted = true;
+      this.muteLabel = 'Unmute';
+      this.player.muted(true);
+    } else{
+      this.isMuted = false;
+      this.muteLabel = 'Mute';
+      this.player.muted(false);
+    }
+  }
+
+   // Dispose the player OnDestroy
+   ngOnDestroy() {
+    if (this.player) {
+      this.player.dispose();
+    }
+  }
 }
